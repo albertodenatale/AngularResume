@@ -27,7 +27,7 @@ import { mainReducer, authenticationReducer, navigationReducer, clippyReducer } 
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
     BrowserAnimationsModule,
     FormsModule,
     ExperiencesModule,
