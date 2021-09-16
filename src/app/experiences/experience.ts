@@ -1,6 +1,5 @@
 import { Node } from './../navigation/navigation';
-import * as moment from 'moment';
-import { SnapshotAction } from "@angular/fire/database";
+import moment from 'moment';
 
 export class Experience extends Node {
     constructor() {
@@ -34,7 +33,6 @@ export class Period {
 }
 
 export function ParsePeriod(period: string): Period {
-    // TODO this will have to change
     if (period == null) {
         return new Period();
     }
@@ -71,26 +69,4 @@ export function formatPeriod(period:Period): string {
     }
 
     return dateFrom.concat(" - ").concat(dateTo);
-}
-
-export function mapFromSnapshot(experience: SnapshotAction<any>) {
-    let period : Period = experience.payload.val().period;
-
-    if(period== null){
-        period = <Period>{
-            from:0,
-            to:0
-        }
-    };
-    
-    return <Experience>{
-        id: experience.key,
-        title: experience.payload.val().title,
-        place: experience.payload.val().place,
-        description: experience.payload.val().description,
-        subnav: experience.payload.val().subnav,
-        period: period,
-        path: experience.payload.val().path,
-        label: experience.payload.val().label
-    }
 }

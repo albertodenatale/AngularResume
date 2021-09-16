@@ -1,0 +1,354 @@
+[
+    {
+       "description":"Front-end development on HTML5 web sites, compiled to IOS apps. I mainly worked with JavaScript, HTML5 and CSS3.",
+       "id": "7",
+       "label":"",
+       "path":[
+          "backend",
+          "csharp",
+          "frontend",
+          "js",
+          "jquery",
+          "subversion",
+          "tsql",
+          "css",
+          "js"
+       ],
+       "period":{
+          "from":1383264000,
+          "to":1406847600
+       },
+       "place":"PharmiWeb Solutions, Bracknell (United Kingdom)",
+       "subnav":[
+          {
+             "id":0,
+             "key":"frontend",
+             "label":"Front End",
+             "path":[
+                "frontend"
+             ]
+          },
+          {
+             "id":2,
+             "key":"js",
+             "label":"js",
+             "path":[
+                "frontend",
+                "js"
+             ]
+          },
+          {
+             "id":3,
+             "key":"angularjs",
+             "label":"AngularJS",
+             "path":[
+                "frontend",
+                "js",
+                "angularjs"
+             ]
+          },
+          {
+             "id":6,
+             "key":"csharp",
+             "label":"C#",
+             "path":[
+                "backend",
+                "csharp"
+             ]
+          }
+       ],
+       "title":"Junior Software Developer"
+    },
+    {
+       "description":"Path finding with A* (C++), Graphical Maya Scene Exporting (C++, Python)",
+       "id": "8",
+       "label":"",
+       "path":[
+          "backend",
+          "subversion",
+          "cpp",
+          "python"
+       ],
+       "period":{
+          "from":1312153200,
+          "to":1320105600
+       },
+       "place":"Internship for Forge Reply s.r.l., Milan (Italy)",
+       "subnav":[
+          {
+             "id":0,
+             "key":"frontend",
+             "label":"Front End",
+             "path":[
+                "frontend"
+             ]
+          },
+          {
+             "id":2,
+             "key":"js",
+             "label":"js",
+             "path":[
+                "frontend",
+                "js"
+             ]
+          },
+          {
+             "id":4,
+             "key":"jquery",
+             "label":"JQuery",
+             "path":[
+                "frontend",
+                "js",
+                "jquery"
+             ]
+          },
+          {
+             "id":6,
+             "key":"csharp",
+             "label":"C#",
+             "path":[
+                "backend",
+                "csharp"
+             ]
+          }
+       ],
+       "title":"Junior Software Developer"
+    },
+    {
+       "description":"Identity management solutions (Oracle Waveset), Web applications hardening (PHP), Data\nMasking (C), Web Application Development (Java, Hibernate, Spring)",
+       "id": "9",
+       "label":"",
+       "path":[
+          "backend",
+          "java",
+          "php",
+          "cnopp"
+       ],
+       "period":{
+          "from":1338505200,
+          "to":1370041200
+       },
+       "place":"Innovery S.p.A., Rome (Italy)",
+       "subnav":[
+          {
+             "id":0,
+             "key":"backend",
+             "label":"Back End",
+             "path":[
+                "backend"
+             ]
+          },
+          {
+             "id":6,
+             "key":"csharp",
+             "label":"C#",
+             "path":[
+                "backend",
+                "csharp"
+             ]
+          }
+       ],
+       "title":"System Integrator"
+    },
+    {
+       "description":"Electronic signature projects with .NET WPF and MVC.",
+       "id":"10",
+       "label":"",
+       "path":[
+          "backend",
+          "csharp",
+          "wcf",
+          "subversion",
+          "wpf",
+          "mvc"
+       ],
+       "period":{
+          "from":1370041200,
+          "to":1380582000
+       },
+       "place":"Freelancer",
+       "subnav":[
+          {
+             "id":0,
+             "key":"frontend",
+             "label":"Front End",
+             "path":[
+                "frontend"
+             ]
+          },
+          {
+             "id":2,
+             "key":"js",
+             "label":"js",
+             "path":[
+                "frontend",
+                "js"
+             ]
+          },
+          {
+             "id":4,
+             "key":"jquery",
+             "label":"JQuery",
+             "path":[
+                "frontend",
+                "js",
+                "jquery"
+             ]
+          }
+       ],
+       "title":"Software Developer"
+    },
+    {
+       "id": "11",
+       "description":"Avanade is a joint venture between Microsoft and Accenture.\n \nI had the privilege to work for two of their Fortune Global 500 customers, one of them being one of the biggest banks in Europe. I worked on different projects. \n \nThe first required to migrate a car fleet management tool written in .NET MVC 5 to PAAS, Azure App Services. We had to rewrite part of the application written to use a COM library in order to parse a Microsoft Excel file. \n \nThe second, in a team of 50 or more developers and using Angular and Ionic, required to swap the third party provider used by the home banking mobile app in order to categorise transactions made by the users. \n \nThe third focused on the maintenance of a WPF application operating in the Forex market. I integrated it with a new service performing credit checks on customers wanting to buy derivates.\n\nI took a legacy library that was parsing and running an SQL where clause and rewrote it/refitted to work with a novel internal framework.\n\nI took a legacy, data ingestion library that was subscribing to a stream of prices provided by Reuters, and rewrote/refitted to work with a novel internal framework; the Reuters feed at times was producing bursts of messages and I wrote a multi-threaded data-ingestor that was aggregating the prices returning the most updated values, pacing them using a configurable interval.\n\nI helped to deploy and to troubleshoot a background job that was loading in RAM GBs of data acting as a cache, keeping them in sync between their sources (a number of files on different shared folder published by other teams daily) and destinations (an Oracle DB). The job was exposing a Rest API that was querying the cache using .NET Web API, exposing OAuth 2.0 authentication (client credential flow) with JWT Tokens.\n\nMy daily tasks included attending meetings with customers, deliver the changes in time and handing over when moving to a different assignment.\n\nWhile at Avanade I managed become open source contributor on GitHub for the Microsoft Azure Event Hubs SDK. I also attended the the Microsoft Build 2020 event, I was rewarded with an exam voucher, I used it to pass my AZ204: Developing Solutions for Microsoft Azure exam. Avanade generously provides weeks of training for their employees and pays their exams. By winning the voucher I saved the company the cost of the exam.",
+       "path":[
+          "backend",
+          "frontend",
+          "cloud",
+          "angularjs",
+          "js",
+          "git",
+          "tsql",
+          "ef",
+          "wpf",
+          "wcf",
+          "css",
+          "mvc",
+          "angular5",
+          "tfs",
+          "ionic",
+          "typescript",
+          "bootstrap",
+          "azureappservices",
+          "csharp",
+          "swagger"
+       ],
+       "period":{
+          "from":1554076800,
+          "to":1596153600
+       },
+       "place":"Avanade, Milan, Italy",
+       "title":"Consultant"
+    },
+    {
+       "id": "12",
+       "description":"",
+       "path":[
+          "frontend",
+          "backend",
+          "cqrs",
+          "microservices",
+          "netcore",
+          "js",
+          "azurecosmosdb",
+          "azureservicebus",
+          "eventsourcing",
+          "react",
+          "git",
+          "cloud",
+          "swagger"
+       ],
+       "period":{
+          "from":1596153600
+       },
+       "place":"Zupa Tech Ltd, Southampton, UK",
+       "title":"Software Developer"
+    },
+    {
+       "id": "13",
+       "description":"I Worked as .NET backend developer in the mailing industry using WPF, WCF, WebApi, Webforms, T-SQL and MVC. I worked on a windows service, an MVC web-application, a Web API web service, different T-SQL stored procedures and one WPF application.",
+       "path":[
+          "backend",
+          "csharp",
+          "webapi",
+          "wcf",
+          "wpf",
+          "frontend",
+          "mvc",
+          "tsql",
+          "jquery",
+          "angularjs",
+          "js",
+          "tfs",
+          "nhibernate"
+       ],
+       "period":{
+          "from":1409526000,
+          "to":1448928000
+       },
+       "place":"Mosaic Online Systems, Worthing (United Kingdom)",
+       "title":"Junior Software Developer"
+    },
+    {
+       "id": "14",
+       "description":"Worked on different integrations with third party web-services (Trustpilot, Mailchimp,\nEventbrite) for different ASP.NET MVC websites. Ordinary maintenance for customer\nwebsites. I worked and promoted the adoption of Owin and Katana for a small self hosted\nWebApi 2.0 webservice, withing a windows service.",
+       "path":[
+          "backend",
+          "mvc",
+          "tsql",
+          "webapi",
+          "csharp",
+          "frontend",
+          "js",
+          "jquery",
+          "subversion",
+          "ef"
+       ],
+       "period":{
+          "from":1451606400,
+          "to":1470006000
+       },
+       "place":"Fresh Egg, Worthing (United Kingdom)",
+       "title":"Web Developer"
+    },
+    {
+       "id": "15",
+       "description":"Worked on the extension of two different AngularJS, Web API 2, SQL Server projects, mainly on authentication side installing and configuring ASP.NET Identity with JWT tokens. I also had the opportunity to work with Git, Windows Workflow Foundation, Ninject, MOQ, Bower and Grunt",
+       "path":[
+          "backend",
+          "webapi",
+          "csharp",
+          "frontend",
+          "angularjs",
+          "js",
+          "git"
+       ],
+       "period":{
+          "from":1472684400,
+          "to":1488326400
+       },
+       "place":"Brightserve, Chichester",
+       "title":"Software Engineer"
+    },
+    {
+       "id": "18",
+       "description":"Creditplus is one of the leading actors in the car finance market in the UK.\n \n As a software developer I used to work on the entire application life cycle, from writing the code to deliver it and maintain it in production.\n \n My responsibilities were:\n \n - Working adopting modern management methodologies such as Kanban and Continuous Delivery\n - Writing fit-for-purpose code and building scalable functionality to support new application features\n - Updating peers and management on work status and progress, identifying issues and clearly communicating them\n - Updating, maintaining and day-to-day running of existing websites using C#, .NET 5, JavaScript, TypeScript, jQuery, .NET    MVC, .NET Web API and T-SQL\n - Implementing security upgrades to mutual TLS authentication with key partner API\n - Prioritising, managing and delivering fixes for bug/defect backlogs\n - Co-ordinating and developing HTTP interface upgrades with key partners\n - Managing the renewal and configuration of company SSL certificates\n \n My main achievements were:\n \n - Discovered a way to extend the existing ASP/iframe based CRM with modern technologies such as .NET Core and Angular\n - Created a lender API in .NET Core containing 10 connectors with as many lenders, allowing to increase the number of lending options available for customers\n - Discovered and fixed a security entry\n - During an integration with a lender, reverse engineered the algorithm to calculate the monthly interest starting from the APR, the loan amount and the term. That was an important algorithm for the business that no one before ever implemented.",
+       "path":[
+          "backend",
+          "csharp",
+          "cloud",
+          "tsql",
+          "webapi",
+          "frontend",
+          "angular5",
+          "git",
+          "tfs",
+          "ef",
+          "css",
+          "bootstrap",
+          "js",
+          "typescript",
+          "swagger",
+          "netcore",
+          "azureappservices",
+          "mvc",
+          "microservices"
+       ],
+       "period":{
+          "from":1488326400,
+          "to":1554076800
+       },
+       "place":"Creditplus, Poole",
+       "title":"Software Developer"
+    }
+ ]

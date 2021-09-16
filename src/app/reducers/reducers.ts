@@ -19,6 +19,7 @@ export function navigationReducer(state: ISkillTree = { root: null, isLoaded: fa
 
             break;
         case Actions.QUERYSTRINGLOADED:
+            state = JSON.parse(JSON.stringify(state));
             state = { ...state, queryString: action.payload };
 
             loadQueryString(state);

@@ -16,15 +16,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JsClippyModule } from 'js-clippy'
 import { StoreModule } from "@ngrx/store";
-import { AngularFireModule } from '@angular/fire';
 import { EffectsModule } from "@ngrx/effects";
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
 import * as moment from 'moment';
 import { RouterModule } from "@angular/router";
 import { mainReducer, authenticationReducer, navigationReducer, clippyReducer } from './reducers/reducers';
-import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -41,11 +36,7 @@ import { environment } from 'src/environments/environment';
     SharedModule,
     EditingModule,
     StoreModule.forRoot({ navigation: navigationReducer, main: mainReducer, authentication: authenticationReducer, clippy: clippyReducer }),
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule.enablePersistence(),            
-    AngularFireDatabaseModule,   
-    EffectsModule.forRoot([StateService, ExperienceService, QueryStringService]),      
-    AngularFireAuthModule,
+    EffectsModule.forRoot([StateService, ExperienceService, QueryStringService]),     
     LoadingModule,
     JsClippyModule
   ],

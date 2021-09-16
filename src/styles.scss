@@ -256,7 +256,7 @@ app-clippy{
 @include media-breakpoint-up(md) { 
     app-clippy{
         top:25%;
-        right:20%;
+        right:30%;
         left:auto;
     }
 }
@@ -281,14 +281,6 @@ $pinkish: #f48fb1;
 body.darkModeOn {
     background-color:#333;
     color: white;
-}
-
-darkmodetoggle {
-    float: right;
-
-    img {
-        width: 100%;
-    }
 }
 
 .darkModeOn {

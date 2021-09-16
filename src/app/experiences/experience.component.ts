@@ -65,25 +65,4 @@ export class ExperienceComponent {
       new Remove(skill.id)
     )
   }
-
-  updateTitle(experience, newTitle: string) {
-    this.experienceService.updateExperience(experience, { title: newTitle });
-  }
-
-  updatePlace(experience, newPlace: string) {
-    this.experienceService.updateExperience(experience, { place: newPlace });
-  }
-
-  updateDescription(experience, description: string) {
-    this.experienceService.updateExperience(experience, { description: description });
-  }
-
-  updatePeriod(experience, period: string) {
-    this.experienceService.updateExperience(experience, { period: ParsePeriod(period) });
-  }
-
-  deleteExperience(experience) {
-    this.experienceService.deleteExperience(experience);
-  }
-
 }

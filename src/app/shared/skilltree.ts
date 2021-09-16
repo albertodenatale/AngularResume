@@ -1,5 +1,4 @@
 import { Experience } from './../experiences/experience';
-import { AngularFireList } from '@angular/fire/database';
 
 export function addSkill(tree: ISkillTree, skillId: string) {
     if (tree && tree.root) {
@@ -157,7 +156,7 @@ export class SkillTree implements ISkillTree {
 
 export class Main {
     isLoaded?: boolean;
-    experiences: AngularFireList<Experience[]>;
+    experiences: Experience[];
 }
 
 export class ClippyState{
