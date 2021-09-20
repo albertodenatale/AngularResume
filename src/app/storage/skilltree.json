@@ -414,6 +414,59 @@
                    "label":"Cloud",
                    "navigationBarId":"MAINNAV",
                    "weight":0.5
+                },
+                {
+                  "children":[
+                     {
+                        "id":"zero"
+                     },
+                     {
+                        "id":"instrument",
+                        "label":"Instrumentation",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"devops"
+                     },
+                     {
+                        "id":"sre",
+                        "label":"Site Reliability Engineering",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"devops"
+                     },
+                     {
+                        "id":"azuresecurity",
+                        "label":"Security and Compliance",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"devops"
+                     },
+                     {
+                        "id":"sourcecontrol",
+                        "label":"Source Control",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"devops"
+                     },
+                     {
+                        "id":"communication",
+                        "label":"Communication and Collaboration",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"devops"
+                     },
+                     {
+                        "id":"ci",
+                        "label":"Continuous Integration",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"devops"
+                     },
+                     {
+                        "id":"cd",
+                        "label":"Continuous Delivery",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"devops"
+                     }
+                  ],
+                   "id": "devops",
+                   "label": "DevOps",
+                   "navigationBarId": "MAINNAV",
+                   "weight": 0.5
                 }
              ],
              "id":"webdev"

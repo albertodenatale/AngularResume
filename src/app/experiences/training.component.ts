@@ -71,6 +71,16 @@ export class TrainingComponent {
 
   trainings = [
     {
+      duration:"29th May 2021",
+      title:"Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions",
+      place:"Microsoft, Southampton, UK",
+      path:["instrument", "sre", 
+            "azuresecurity", "sourcecontrol", 
+            "communication", "ci", 
+            "cd" ],
+      navs:[]
+    },
+    {
       duration:"12th July 2020",
       title:"Exam AZ-204: Developing Solutions for Microsoft Azure",
       place:"Microsoft, Milan, Italy",
