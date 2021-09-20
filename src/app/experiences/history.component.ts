@@ -14,7 +14,7 @@ import { map } from 'rxjs/operators'
   selector: 'history',
   template: `
      <line>Work Experience</line>
-     <div [@flyInOut]="queue.length" (@flyInOut.done)="displayEducationAndTraining($event)">
+     <div [@flyInOut]="queue.length" (@flyInOut.done)="displayEducationAndTraining()">
        <experience *ngFor="let experience of queue" [experience]="experience" [style.transform]="'translateY('+experience.currentPosition+'px)'" class="row"></experience>
      </div>
      <button *ngIf="isEditable==true" class="btn btn-primary" (click)="addEmptyExperience()">Add</button>
