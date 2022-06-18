@@ -68,6 +68,18 @@
                          "parentId":"backend"
                       },
                       {
+                         "id":"ddd",
+                         "label":"DDD",
+                         "navigationBarId":"SUBNAV",
+                         "parentId":"backend"
+                      },
+                      {
+                         "id":"auth0",
+                         "label":"Auth0",
+                         "navigationBarId":"SUBNAV",
+                         "parentId":"backend"
+                      },
+                      {
                          "id":"microservices",
                          "label":"Microservices",
                          "navigationBarId":"SUBNAV",
@@ -94,12 +106,16 @@
                       {
                          "id":"swagger",
                          "label":"Swagger",
-                         "navigationBarId":"SUBNAV",
                          "parentId":"backend"
                       },
                       {
                          "id":"netcore",
                          "label":".NET Core",
+                         "parentId":"backend"
+                      },
+                      {
+                         "id":"net6",
+                         "label":".NET 6",
                          "navigationBarId":"SUBNAV",
                          "parentId":"backend"
                       },

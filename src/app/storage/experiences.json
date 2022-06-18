@@ -231,25 +231,56 @@
        "title":"Consultant"
     },
     {
-       "id": "12",
+       "id": "16",
        "description":"",
        "path":[
           "frontend",
           "backend",
+          "ddd",
+          "csharp",
+          "webapi",
+          "mvc",
+          "azureservicebus",
+          "auth0",
+          "net6",
+          "git",
+          "cloud",
+          "azureappservices",
+          "swagger",
+          "ci",
+          "ef",
+          "microservices"
+       ],
+       "period":{
+          "from":1644019200
+       },
+       "place":"Inbox Insight, Winchester, UK",
+       "title":"Senior Software Developer"
+    },
+    {
+       "id": "12",
+       "description":"Joined the company on a quest to launch a greenfield project made of a set of microservices that would support the different actors of the hospitality supply chain negotiating and delivering the products they need. \n\nI was a member of the procurement team, working in Agile Scrum in iterations of 3 weeks.              \n\nI contributed to the design and delivery of features and the resolution of bugs for the Agreements, Orders, Products and Stocks services.              \n\nThe technical stack I worked on was:              \n\n- Microsoft .NET Core 3.1       \n- .NET Web API, C#       \n- JavaScript, Jest, ReactJS       \n- Event Sourcing, CQRS       \n- Azure DevOps (Boards, Repos, Pipelines, Artifacts)       \n- GitHub       \n- YAML Pipelines       \n- Azure App Services, Azure PIM, Azure Service Bus, Azure Identity, Azure Active Directory B2C, Azure API Management, Azure Cosmos DB, Microsoft Azure SQL, Azure Front Door       \n- Feature branching, CI/CD pipelines              \n\nThe defining challenge we had to overcome as a team was displaying, processing and moving around 50MB per user of data across the front end and different services. We iteratively moved from front-end to back-end pagination, reducing the ability for the user to work offline.              \n\nNotable contributions:              \n- Passed Microsoft AZ-400 Designing and Implementing Microsoft DevOps Solutions certification       \n- Together with AZ-204 became 'DevOps Engineer Expert'       \n- Passed the Problem Solver Intermediate certification on HackerRank       \n- Spotted and reproduced XSS vulnerability during PR before it reached release introduced by this dependency https://github.com/peternewnham/react-html-parser/blob/master/README.md#security       \n- Suggested how PostJsonAsync could help save memory by sending data directly on the wire        \n- Implemented a custom React Numerical Input starting from repo https://github.com/mohitgupta8888/react-currency-format/blob/react-currency-format/src/currency-format.js       \n- During a PR, suggested how using DB pagination could avoid loading data in memory",
+       "path":[
+          "frontend",
+          "backend",
           "cqrs",
+          "csharp",
           "microservices",
           "netcore",
           "js",
           "azurecosmosdb",
+          "azureappservices",
           "azureservicebus",
           "eventsourcing",
           "react",
           "git",
           "cloud",
-          "swagger"
+          "swagger",
+          "ci",
+          "cd"
        ],
        "period":{
-          "from":1596153600
+          "from":1638662400
        },
        "place":"Zupa Tech Ltd, Southampton, UK",
        "title":"Software Developer"
@@ -270,7 +301,9 @@
           "angularjs",
           "js",
           "tfs",
-          "nhibernate"
+          "nhibernate",
+          "ci",
+          "cd"
        ],
        "period":{
           "from":1409526000,
