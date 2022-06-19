@@ -160,7 +160,8 @@
           "wcf",
           "subversion",
           "wpf",
-          "mvc"
+          "mvc",
+          "razor"
        ],
        "period":{
           "from":1370041200,
@@ -214,6 +215,7 @@
           "wcf",
           "css",
           "mvc",
+          "razor",
           "angular5",
           "tfs",
           "ionic",
@@ -246,6 +248,7 @@
           "swagger",
           "ef",
           "mvc",
+          "razor",
           "cloud",
           "azureappservices",
           "azureservicebus",
@@ -323,6 +326,7 @@
        "path":[
           "backend",
           "mvc",
+          "razor",
           "tsql",
           "webapi",
           "csharp",
@@ -380,6 +384,7 @@
           "netcore",
           "azureappservices",
           "mvc",
+          "razor",
           "microservices"
        ],
        "period":{

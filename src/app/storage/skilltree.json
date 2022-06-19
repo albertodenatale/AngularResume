@@ -154,6 +154,11 @@
                          "parentId":"backend"
                       },
                       {
+                         "id":"razor",
+                         "label":"Razor",
+                         "parentId":"backend"
+                      },
+                      {
                          "id":"wpf",
                          "label":"WPF",
                          "parentId":"backend"
