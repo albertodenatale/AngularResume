@@ -68,6 +68,12 @@
                          "parentId":"backend"
                       },
                       {
+                         "id":"cqs",
+                         "label":"CQS",
+                         "navigationBarId":"SUBNAV",
+                         "parentId":"backend"
+                      },
+                      {
                          "id":"ddd",
                          "label":"DDD",
                          "navigationBarId":"SUBNAV",
@@ -122,6 +128,12 @@
                       {
                          "id":"eventsourcing",
                          "label":"Event Sourcing",
+                         "navigationBarId":"SUBNAV",
+                         "parentId":"backend"
+                      },
+                      {
+                         "id":"onion",
+                         "label":"Onion Architecture",
                          "navigationBarId":"SUBNAV",
                          "parentId":"backend"
                       },
