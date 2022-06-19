@@ -71,6 +71,13 @@ export class TrainingComponent {
 
   trainings = [
     {
+      duration:"October 2021",
+      title:"Problem solving intermediate",
+      place:"HackerRank, Southampton, UK",
+      path:["problemsolving"],
+      navs:[]
+    },
+    {
       duration:"29th May 2021",
       title:"Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions",
       place:"Microsoft, Southampton, UK",

@@ -348,6 +348,12 @@
                          "label":"Stochastic Processes",
                          "navigationBarId":"SUBNAV",
                          "parentId":"education"
+                      },
+                      {
+                         "id":"problemsolving",
+                         "label":"Problem Solving",
+                         "navigationBarId":"SUBNAV",
+                         "parentId":"education"
                       }
                    ],
                    "id":"education"
