@@ -288,7 +288,8 @@
           "cd"
        ],
        "period":{
-          "from":1638662400
+         "from":1596153600,
+          "to": 1638706313
        },
        "place":"Zupa Tech Ltd, Southampton, UK",
        "title":"Software Developer"
