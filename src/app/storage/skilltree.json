@@ -126,6 +126,11 @@
                          "parentId":"backend"
                       },
                       {
+                         "id":"net5",
+                         "label":".NET 5",
+                         "parentId":"backend"
+                      },
+                      {
                          "id":"eventsourcing",
                          "label":"Event Sourcing",
                          "navigationBarId":"SUBNAV",
