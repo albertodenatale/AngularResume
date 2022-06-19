@@ -73,14 +73,14 @@ export class TrainingComponent {
     {
       duration:"October 2021",
       title:"Problem solving intermediate",
-      place:"HackerRank, Southampton, UK",
+      place:"HackerRank",
       path:["problemsolving"],
       navs:[]
     },
     {
       duration:"29th May 2021",
       title:"Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions",
-      place:"Microsoft, Southampton, UK",
+      place:"Microsoft",
       path:["instrument", "sre", 
             "azuresecurity", "sourcecontrol", 
             "communication", "ci", 
@@ -103,7 +103,7 @@ export class TrainingComponent {
     {
       duration:"13th June 2018",
       title:"Exam 70-483: Programming in C#",
-      place:"Microsoft, Poole, UK",
+      place:"Microsoft",
       path:["csharp"],
       navs:[]
     },
@@ -116,7 +116,7 @@ export class TrainingComponent {
     },
     {
       duration:"October 2013 – December 2013",
-      title:"ASP.NET: Web Applications with MVC and Entity Frameworks Using C#",
+      title:"ASP.NET: Web Applications with MVC and Entity Framework Using C#",
       place:"City University, London, UK",
       path:["backend", "mvc", "csharp", "ef"],
       navs:[]
@@ -124,7 +124,7 @@ export class TrainingComponent {
     {
       duration:"18th November 2013",
       title:"Java SE 7 Certified Programmer I (Exam 1Z0-803)",
-      place:"Oracle, London",
+      place:"Oracle",
       path:["java"],
       navs:[]
     }

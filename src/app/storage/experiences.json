@@ -252,6 +252,7 @@
           "cloud",
           "azureappservices",
           "azureservicebus",
+          "azurefunctions",
           "auth0",
           "git",
           "ci"
