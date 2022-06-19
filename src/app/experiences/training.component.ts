@@ -90,7 +90,7 @@ export class TrainingComponent {
     {
       duration:"12th July 2020",
       title:"Exam AZ-204: Developing Solutions for Microsoft Azure",
-      place:"Microsoft, Milan, Italy",
+      place:"Microsoft",
       path:["appservices", "azurefunctions", 
             "azurecontainer", "azureregistry", 
             "azurestorage", "azurecosmosdb", 
