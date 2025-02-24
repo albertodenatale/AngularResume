@@ -1,4 +1,4 @@
-import { Effect, Actions, ofType } from '@ngrx/effects';
+import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { Experience } from './experience';
 import { Injectable } from '@angular/core';
 import * as MainActions from '../reducers/actions';
@@ -15,9 +15,9 @@ export class ExperienceService {
       this.experiences = <Partial<Experience>[]> experienceEntities;
     }
 
-    @Effect() loadInitialState$ = this.actions$
+    loadInitialState$ = createEffect(() => this.actions$
       .pipe(
         ofType(MainActions.FETCHMAINCONTENT),
         map(res => ({type: MainActions.MAINCONTENTLOADED, payload: { isLoaded: true } }))
-      );
+      ));
 }

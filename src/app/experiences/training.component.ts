@@ -7,8 +7,8 @@ import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'training',
-  template: `
+    selector: 'training',
+    template: `
   <div *ngIf="display">
     <line>Training</line>
     <div *ngFor="let training of trainings" class="row">
@@ -24,7 +24,8 @@ import { Component, OnInit } from '@angular/core';
       </div>
     </div>
   </div>
-  `
+  `,
+    standalone: false
 })
 export class TrainingComponent {
   public display:boolean = false;

@@ -2,7 +2,8 @@ import { Experience } from './experience';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sortByDateFrom'
+    name: 'sortByDateFrom',
+    standalone: false
 })
 export class SortByDateFromPipe implements PipeTransform {
 

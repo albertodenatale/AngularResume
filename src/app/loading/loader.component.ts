@@ -4,10 +4,11 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from "rxjs";
 
 @Component({
-  selector: 'loader',
-  template: `
+    selector: 'loader',
+    template: `
    <mat-progress-bar *ngIf="isDisplayed" mode="determinate" [value]="progress"></mat-progress-bar>
-  `
+  `,
+    standalone: false
 })
 export class LoaderComponent implements OnInit {
 

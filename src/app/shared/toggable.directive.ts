@@ -1,8 +1,9 @@
 import { Component, OnInit, Output, EventEmitter, HostBinding, HostListener, Input, Directive } from '@angular/core';
 
 @Directive({
-  selector: 'toggable, [toggable]',
-  host: { 'class':'btn' }
+    selector: 'toggable, [toggable]',
+    host: { 'class': 'btn' },
+    standalone: false
 })
 export class ToggableDirective{
   @Output()

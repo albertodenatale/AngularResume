@@ -11,32 +11,29 @@ import { style, trigger, state, transition, animate, keyframes, query, stagger }
 import { map } from 'rxjs/operators'
 
 @Component({
-  selector: 'history',
-  template: `
+    selector: 'history',
+    template: `
      <line>Work Experience</line>
      <div [@flyInOut]="queue.length" (@flyInOut.done)="displayEducationAndTraining()">
        <experience *ngFor="let experience of queue" [experience]="experience" [style.transform]="'translateY('+experience.currentPosition+'px)'" class="row"></experience>
      </div>
      <button *ngIf="isEditable==true" class="btn btn-primary" (click)="addEmptyExperience()">Add</button>
     `,
-  animations: [
-    trigger('flyInOut', [
-      transition('* => *', [
-        query('experience:enter', style({ opacity: 0 }), { optional: true }),
-        query('experience:enter',
-          stagger('200ms', [
-            animate(300,
-              keyframes([
-                style({ opacity: 0, transform: 'translateY(-75px)', offset: 0 }),
-                style({ opacity: .5, transform: 'translateY(35px)', offset: 0.3 }),
-                style({ opacity: 1, transform: 'translateY(0)', offset: 1 })
-              ])
-            )
-          ]), { optional: true }
-        )
-      ])
-    ])
-  ]
+    animations: [
+        trigger('flyInOut', [
+            transition('* => *', [
+                query('experience:enter', style({ opacity: 0 }), { optional: true }),
+                query('experience:enter', stagger('200ms', [
+                    animate(300, keyframes([
+                        style({ opacity: 0, transform: 'translateY(-75px)', offset: 0 }),
+                        style({ opacity: .5, transform: 'translateY(35px)', offset: 0.3 }),
+                        style({ opacity: 1, transform: 'translateY(0)', offset: 1 })
+                    ]))
+                ]), { optional: true })
+            ])
+        ])
+    ],
+    standalone: false
 })
 export class HistoryComponent implements OnInit {
   queue: Array<Experience> = [];

@@ -7,41 +7,34 @@ import { Add, Remove } from "../reducers/actions";
 import { style, trigger, transition, animate, keyframes, query, stagger } from "@angular/animations";
 
 @Component({
-  selector: 'subnavigation',
-  template: `
+    selector: 'subnavigation',
+    template: `
     <div [@animateSubnav]="navs.length">
       <toggable *ngFor="let nav of navs" [isOn]="nav.isActive" (whenOff)="whenOff(nav)" (whenOn)="whenOn(nav)">{{nav.label}}</toggable>
     </div>
   `,
-  animations: [
-    trigger('animateSubnav', [
-      transition('* => *', [
-        query(':enter', style({ opacity: 0 }), { optional: true }),
-        query(':enter',
-          stagger('200ms', [
-            animate(300,
-              keyframes([
-                style({ transform: 'translateX(-100%)', opacity: 0 }),
-                style({ transform: 'translateX(30px)', opacity: 1 }),
-                style({ transform: 'translateX(0)' })
-              ])
-            )
-          ]), { optional: true }
-        ),
-        query(':leave',
-          stagger('200ms', [
-            animate(300,
-              keyframes([
-                style({ transform: 'translateX(0)' }),
-                style({ transform: 'translateX(-30px)', opacity: 1 }),
-                style({ transform: 'translateX(1000%)', opacity: 0 })
-              ])
-            )
-          ]), { optional: true }
-        )
-      ])
-    ])
-  ]
+    animations: [
+        trigger('animateSubnav', [
+            transition('* => *', [
+                query(':enter', style({ opacity: 0 }), { optional: true }),
+                query(':enter', stagger('200ms', [
+                    animate(300, keyframes([
+                        style({ transform: 'translateX(-100%)', opacity: 0 }),
+                        style({ transform: 'translateX(30px)', opacity: 1 }),
+                        style({ transform: 'translateX(0)' })
+                    ]))
+                ]), { optional: true }),
+                query(':leave', stagger('200ms', [
+                    animate(300, keyframes([
+                        style({ transform: 'translateX(0)' }),
+                        style({ transform: 'translateX(-30px)', opacity: 1 }),
+                        style({ transform: 'translateX(1000%)', opacity: 0 })
+                    ]))
+                ]), { optional: true })
+            ])
+        ])
+    ],
+    standalone: false
 })
 export class SubnavigationComponent {
   navs: Array<Skill> = [];

@@ -14,7 +14,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { JsClippyModule } from 'js-clippy'
 import { StoreModule } from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
 import * as moment from 'moment';
@@ -27,7 +26,7 @@ import { mainReducer, authenticationReducer, navigationReducer, clippyReducer } 
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
+    RouterModule.forRoot([], {}),
     BrowserAnimationsModule,
     FormsModule,
     ExperiencesModule,
@@ -37,8 +36,7 @@ import { mainReducer, authenticationReducer, navigationReducer, clippyReducer } 
     EditingModule,
     StoreModule.forRoot({ navigation: navigationReducer, main: mainReducer, authentication: authenticationReducer, clippy: clippyReducer }),
     EffectsModule.forRoot([StateService, ExperienceService, QueryStringService]),     
-    LoadingModule,
-    JsClippyModule
+    LoadingModule
   ],
   providers: [{ provide: 'moment', useValue: moment }],
   bootstrap: [AppComponent]

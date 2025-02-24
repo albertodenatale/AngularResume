@@ -2,11 +2,12 @@ import { EditService } from './../core/edit.service';
 import { Component, OnInit, HostListener, HostBinding } from '@angular/core';
 
 @Component({
-  selector: 'edit-tooltip',
-  template: `
+    selector: 'edit-tooltip',
+    template: `
     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
   `,
-  styles: [':host { display:none; position:fixed; }']
+    styles: [':host { display:none; position:fixed; }'],
+    standalone: false
 })
 export class EditTooltipComponent {
 

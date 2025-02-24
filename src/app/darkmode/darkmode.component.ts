@@ -9,7 +9,8 @@ import { Component, HostBinding, HostListener, Inject, OnInit, Renderer2 } from 
         ':host { width: 100%; height: 100%; }',
         ':host.moon { background: url(/assets/img/moon-clear-fill.svg) no-repeat right top / 100% 100% }',
         ':host.sun { background: url(/assets/img/sun-fill.svg) no-repeat right top / 100% 100% }'
-    ]
+    ],
+    standalone: false
 })
 export class DarkmodeComponent {
     @HostBinding('class.sun') isOn: boolean = false;

@@ -7,31 +7,27 @@ import { ISkillTree, getByNavigationBarId, Skill } from "../shared/skilltree";
 import { style, trigger, state, transition, animate, keyframes, query, stagger } from "@angular/animations";
 
 @Component({
-  selector: 'navigation',
-  template: `
+    selector: 'navigation',
+    template: `
     <div [@animatebar]="animationTrigger" (@animatebar.done)="triggerSubnav($event)">
       <toggable *ngFor="let nav of navs" [isOn]="nav.isActive" (whenOff)="whenOff(nav)" (whenOn)="whenOn(nav)">{{nav.label}}</toggable>
     </div>
   `,
-  animations: [
-    trigger("animatebar",
-      [
-        transition('* => *', [
-          query(':enter', style({ opacity: 0 }), { optional: true }),
-          query(':enter',
-            stagger('200ms', [
-              animate(300,
-                keyframes([
-                  style({ transform: 'translateX(-100%)', opacity: 0 }),
-                  style({ transform: 'translateX(30px)', opacity: 1 }),
-                  style({ transform: 'translateX(0)' })
-                ])
-              )
-            ]), { optional: true }
-          )
+    animations: [
+        trigger("animatebar", [
+            transition('* => *', [
+                query(':enter', style({ opacity: 0 }), { optional: true }),
+                query(':enter', stagger('200ms', [
+                    animate(300, keyframes([
+                        style({ transform: 'translateX(-100%)', opacity: 0 }),
+                        style({ transform: 'translateX(30px)', opacity: 1 }),
+                        style({ transform: 'translateX(0)' })
+                    ]))
+                ]), { optional: true })
+            ])
         ])
-      ])
-  ]
+    ],
+    standalone: false
 })
 export class NavigationComponent {
 

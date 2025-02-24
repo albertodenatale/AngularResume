@@ -4,7 +4,8 @@ import { EditService } from './../core/edit.service';
 import { Directive, HostBinding, HostListener, Output, EventEmitter, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[editable]'
+    selector: '[editable]',
+    standalone: false
 })
 export class EditableDirective {
 

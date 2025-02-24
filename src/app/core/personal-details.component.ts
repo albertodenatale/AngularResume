@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 declare var Skype : any;
 
 @Component({
-  selector: 'personal-details',
-  template: `  
+    selector: 'personal-details',
+    template: `  
   <div class="row personal">
     <div class="col-10 col-lg-8 second order-lg-3">
       <h5>Alberto De Natale</h5>
@@ -16,14 +16,15 @@ declare var Skype : any;
     </div>
     <div class="col-12 col-lg-9 offset-lg-3 order-lg-3 col second jupiter">
       <span class="trait"><i class="fa fa-skype" aria-hidden="true"></i><a href="javascript://" (click)="openSkype()">alberto.denatale</a></span>
-      <span class="trait"><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:alberto.denatale@outlook.com">alberto.denatale@outlook.com</a></span>
+      <span class="trait"><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:alberto.denatale@outlook.com">alberto.denatale&#64;outlook.com</a></span>
       <span class="trait"><i class="fa fa-linkedin" aria-hidden="true"></i><a target="_blank" href="https://www.linkedin.com/in/alberto-de-natale/">LinkedIn</a></span>
       <span class="trait"><i class="fa fa-github" aria-hidden="true"></i><a target="_blank" href="https://github.com/albertodenatale/my-angular-website">GitHub</a></span>
       <span class="trait"><i class="fa fa-stack-overflow" aria-hidden="true"></i><a target="_blank" href="https://stackexchange.com/users/3578609/alberto">Stack Overflow</a></span>
       <span class="trait"><i class="fa fa-windows" aria-hidden="true"></i><a target="_blank" href="https://docs.microsoft.com/en-us/users/albertodenatale/">Microsoft Learn</a></span>
       <div id="SkypeButton_Call_alberto.denatale_1" style="display:none"></div>
     </div>
-  </div>`
+  </div>`,
+    standalone: false
 })
 export class PersonalDetailsComponent {
 

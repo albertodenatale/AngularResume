@@ -7,8 +7,8 @@ import { Add, Remove } from "../reducers/actions";
 import { ExperienceService } from '../experiences/experience.service';
 
 @Component({
-  selector: 'experience',
-  template: `
+    selector: 'experience',
+    template: `
     <i *ngIf="isEditable" (click)="deleteExperience(experience)" class="fa fa-trash-o" aria-hidden="true"></i>
     <div class="col-12 col-lg-9 order-lg-3 second">
       <h5>{{experience.title}}</h5>
@@ -20,7 +20,8 @@ import { ExperienceService } from '../experiences/experience.service';
       <toggable *ngFor="let nav of navs" [isOn]="nav.isActive" class="btn-sm" (whenOff)="whenOff(nav)" (whenOn)="whenOn(nav)">{{nav.label}}</toggable>
       <div>{{experience.place}}</div>
       <pre>{{experience.description}}</pre>
-    </div>`
+    </div>`,
+    standalone: false
 })
 export class ExperienceComponent {
 
