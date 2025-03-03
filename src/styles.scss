@@ -15,8 +15,36 @@ $blueDark:#424199;
 $blueMedium:#4F81BD;
 $blueLight:#1698CE;
 $whitish: #e6e5e5;
-$minHeight:200px;
 $paddingRightColumns1:20px;
+$mobile-phones: 576px;        // Extra Small (xs)
+$large-phones: 768px;         // Small (sm)
+$tablets: 992px;              // Medium (md)
+$small-laptops: 1200px;       // Large (lg)
+$desktops: 1400px;            // Extra Large (xl)
+$large-screens: 1600px;       // Extra Extra Large (xxl)
+
+
+:root {
+  --blue-dark: #{$blueDark};
+  --blue-medium: #{$blueMedium};
+  --blue-light: #{$blueLight};
+  --whitish: #{$whitish};
+  --red: #{$red};
+  --darkRed: #{$darkRed};
+  --yellow: #{$yellow};
+  --darkYellow: #{$darkYellow};
+  --green: #{$green};
+  --darkGreen: #{$darkGreen};
+  --orange: #{$orange};
+  --darkOrange: #{$darkOrange};
+  --blue: #{$blue};
+  --mobile-phones: #{$mobile-phones};
+  --large-phones: #{$large-phones};
+  --tablets: #{$tablets};
+  --small-laptops: #{$small-laptops};
+  --desktops: #{$desktops};
+  --large-screens: #{$large-screens};
+}
 
 body{
     font-size: 15px;
@@ -39,15 +67,14 @@ pre{
 }
 
 //temp styles 
-.personal {
-    height: $minHeight;
+.personal-container {
     margin-top:2rem;
 
     .jupiter {
         margin-top: 5px;
     }
 
-    .col.second{
+    .personal-details {
 
         .trait {
             width: 100%;
@@ -82,28 +109,6 @@ mat-progress-bar[ng-reflect-value="101"]{
     }
 }
 
-.separator {
-    height: ($minHeight/5);
-    margin-bottom: 3%; 
-}
-
-.line {
-    width:100%;
-    height: 2px;
-    background: $blueMedium;
-    position: absolute;
-    bottom: 0;
-    left:0;
-}
-
-.square {
-    width:15px;
-    height: 15px;
-    background: $blueMedium;
-    position: absolute;
-    bottom: 0;
-    right:0;
-}
 
 header .first h5 {
     top: 0;
@@ -143,7 +148,7 @@ html, body {
 }
 
 navigation, subnavigation {
-    display: flex;
+    display: none;
     margin-top:1%;
     width: 100%;
     // .input-group{
@@ -155,6 +160,12 @@ navigation, subnavigation {
         height:38px;
         min-width: 115px;
         margin: 5px 10px 0 0;
+    }
+}
+
+@container (min-width: 576px) {
+    navigation, subnavigation {
+        display: block;
     }
 }
 
@@ -225,25 +236,6 @@ subnavigation {
     min-height: 50px;
 }
 
-training, education{
-    .row{
-        margin-bottom: 15px;
-    }
-    .first{
-        margin-bottom: 10px;
-    }
-    toggable{
-        margin-right: 5px;
-        margin-bottom: 5px;
-    }
-}
-
-
-app-clippy{
-    position: absolute;
-    top:15%;
-    left:60%;
-}
 
 @include media-breakpoint-up(xl) { 
     app-clippy{
@@ -296,9 +288,9 @@ body.darkModeOn {
         color: $blueLight !important;
     }
 
-    .personal {
+    .personal-container {
 
-        .col.second{
+        .personal-details{
     
             .trait {
 

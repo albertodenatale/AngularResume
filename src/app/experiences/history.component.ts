@@ -15,9 +15,8 @@ import { map } from 'rxjs/operators'
     template: `
      <line>Work Experience</line>
      <div [@flyInOut]="queue.length" (@flyInOut.done)="displayEducationAndTraining()">
-       <experience *ngFor="let experience of queue" [experience]="experience" [style.transform]="'translateY('+experience.currentPosition+'px)'" class="row"></experience>
+       <experience *ngFor="let experience of queue" [experience]="experience" [style.transform]="'translateY('+experience.currentPosition+'px)'"></experience>
      </div>
-     <button *ngIf="isEditable==true" class="btn btn-primary" (click)="addEmptyExperience()">Add</button>
     `,
     animations: [
         trigger('flyInOut', [

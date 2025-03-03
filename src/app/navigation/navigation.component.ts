@@ -9,10 +9,10 @@ import { style, trigger, state, transition, animate, keyframes, query, stagger }
 @Component({
     selector: 'navigation',
     template: `
-    <div [@animatebar]="animationTrigger" (@animatebar.done)="triggerSubnav($event)">
-      <toggable *ngFor="let nav of navs" [isOn]="nav.isActive" (whenOff)="whenOff(nav)" (whenOn)="whenOn(nav)">{{nav.label}}</toggable>
-    </div>
-  `,
+      <div [@animatebar]="animationTrigger" (@animatebar.done)="triggerSubnav($event)">
+        <toggable *ngFor="let nav of navs" [isOn]="nav.isActive" (whenOff)="whenOff(nav)" (whenOn)="whenOn(nav)">{{nav.label}}</toggable>
+      </div>
+    `,
     animations: [
         trigger("animatebar", [
             transition('* => *', [

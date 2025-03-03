@@ -1,10 +1,13 @@
-<div class="container" >
-  <navigation class="d-none d-md-block"></navigation>
-  <subnavigation class="d-none d-md-block"></subnavigation>
-  <div *ngIf="user==null" class="btn btn-primary signin" (click)="googleauth()">Sign In</div>
-  <personal-details></personal-details>
-  <history></history>
-  <training></training>
-  <education></education>
-</div>
-<edit-tooltip></edit-tooltip>
+<layout>
+  <div main>
+      <navigation></navigation>
+      <subnavigation></subnavigation> 
+      <personal-details></personal-details>
+      <history></history>
+      <training></training>
+      <education></education>
+  </div>
+  <div aside>
+    <h2>test</h2>
+  </div>
+</layout>

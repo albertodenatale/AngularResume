@@ -1,7 +1,6 @@
 import { LoadingModule } from './loading/loading.module';
 import { SharedModule } from './shared/shared.module';
 import { QueryStringService } from './core/querystring.service';
-import { EditingModule } from './editing/editing.module';
 import { ExperienceService } from './experiences/experience.service';
 import { StateService } from './core/state.service';
 import { CoreModule } from './core/core.module';
@@ -19,6 +18,7 @@ import { EffectsModule } from "@ngrx/effects";
 import * as moment from 'moment';
 import { RouterModule } from "@angular/router";
 import { mainReducer, authenticationReducer, navigationReducer, clippyReducer } from './reducers/reducers';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -33,10 +33,10 @@ import { mainReducer, authenticationReducer, navigationReducer, clippyReducer } 
     NavigationModule,
     CoreModule,
     SharedModule,
-    EditingModule,
     StoreModule.forRoot({ navigation: navigationReducer, main: mainReducer, authentication: authenticationReducer, clippy: clippyReducer }),
     EffectsModule.forRoot([StateService, ExperienceService, QueryStringService]),     
-    LoadingModule
+    LoadingModule,
+    LayoutModule
   ],
   providers: [{ provide: 'moment', useValue: moment }],
   bootstrap: [AppComponent]

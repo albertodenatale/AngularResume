@@ -1,5 +1,4 @@
 import { EducationComponent } from './education.component';
-import { EditingModule } from './../editing/editing.module';
 import { SharedModule } from './../shared/shared.module';
 import { ExperienceService } from './experience.service';
 import { NgModule } from '@angular/core';
@@ -13,8 +12,7 @@ import { TrainingComponent } from "../experiences/training.component";
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule, 
-    EditingModule
+    SharedModule
   ],
   declarations: [ExperienceComponent, HistoryComponent, PeriodPipe, SortByDateFromPipe, TrainingComponent, EducationComponent],
   providers:[ExperienceService],

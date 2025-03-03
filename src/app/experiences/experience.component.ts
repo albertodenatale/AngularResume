@@ -9,18 +9,126 @@ import { ExperienceService } from '../experiences/experience.service';
 @Component({
     selector: 'experience',
     template: `
-    <i *ngIf="isEditable" (click)="deleteExperience(experience)" class="fa fa-trash-o" aria-hidden="true"></i>
-    <div class="col-12 col-lg-9 order-lg-3 second">
-      <h5>{{experience.title}}</h5>
-    </div>
-    <div class="col-12 col-lg-3 order-lg-0 first">
-      <strong>{{experience | period}}</strong>
-    </div>
-    <div class="col-12 col-lg-9 offset-lg-3 order-lg-3 col second">
-      <toggable *ngFor="let nav of navs" [isOn]="nav.isActive" class="btn-sm" (whenOff)="whenOff(nav)" (whenOn)="whenOn(nav)">{{nav.label}}</toggable>
-      <div>{{experience.place}}</div>
-      <pre>{{experience.description}}</pre>
-    </div>`,
+      <div class="experience-container">
+        <div class="experience-title second">
+          <h5>{{experience.title}}</h5>
+        </div>
+        <div class="experience-period first">
+          <strong>{{experience | period}}</strong>
+        </div>
+        <div class="experience-details second">
+          <toggable *ngFor="let nav of navs" [isOn]="nav.isActive" class="btn-sm" (whenOff)="whenOff(nav)" (whenOn)="whenOn(nav)">{{nav.label}}</toggable>
+          <div>{{experience.place}}</div>
+          <pre>{{experience.description}}</pre>
+        </div>
+      </div>
+    `,
+    styles: [`
+        :host {
+            display: block;
+        }
+
+        .experience-container {
+            display: flex;
+            flex-wrap: wrap;
+          }
+          
+        .experience-title {
+            flex: 1 1 100%;
+            order: 0;
+        }
+
+        .experience-period {
+            flex: 1 1 100%;
+            order: 0;
+        }
+
+        .experience-details {
+            flex: 1 1 75%;
+            order: 3;
+            margin-left: 0%;
+        }
+
+        @container (min-width: 576px) {
+          .experience-title,
+          .experience-details {
+            flex: 1 1 100%;
+            order: 0;
+          }
+
+          .experience-period {
+            flex: 1 1 100%;
+            order: 0;
+          }
+        }
+
+        @container (min-width: 768px) {
+          .experience-title,
+          .experience-details {
+            flex: 1 1 100%;
+            order: 0;
+          }
+
+          .experience-period {
+            flex: 1 1 100%;
+            order: 0;
+          }
+        }
+
+        @container (min-width: 992px) {
+          .experience-title {
+            flex: 1 1 75%;
+            order: 3;
+          }
+
+          .experience-period {
+            flex: 1 1 25%;
+            order: 0;
+          }
+
+          .experience-details {
+            flex: 1 1 75%;
+            order: 3;
+            margin-left: 25%;
+          }
+        }
+
+        @container (min-width: 1200px) {
+          .experience-title {
+            flex: 1 1 75%;
+            order: 3;
+          }
+
+          .experience-period {
+            flex: 1 1 25%;
+            order: 0;
+          }
+
+          .experience-details {
+            flex: 1 1 75%;
+            order: 3;
+            margin-left: 25%;
+          }
+        }
+
+        @container (min-width: 1400px) {
+          .experience-title {
+            flex: 1 1 75%;
+            order: 3;
+          }
+
+          .experience-period {
+            flex: 1 1 25%;
+            order: 0;
+          }
+
+          .experience-details {
+            flex: 1 1 75%;
+            order: 3;
+            margin-left: 25%;
+          }
+        }
+      `],
     standalone: false
 })
 export class ExperienceComponent {
