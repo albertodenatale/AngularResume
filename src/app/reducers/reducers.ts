@@ -1,7 +1,7 @@
-import { Main, ClippyState } from './../shared/skilltree';
-import { Experience } from './../experiences/experience';
+import { Main } from './../shared/skilltree';
 import { ISkillTree, findSkill, Skill, enumerateSkill, enumerateAncestors } from '../shared/skilltree';
 import * as Actions from './actions'
+import { ChatMessage } from '../shared/chat.types';
 
 export type SelectedNodes = Array<string[]>
 
@@ -107,15 +107,55 @@ export function authenticationReducer(state: any, action: Actions.Auth) {
     return state;
 }
 
-export function clippyReducer(state: ClippyState, action: Actions.All): ClippyState {
-    if(state == null){
-        state = new ClippyState();
-    }
-    
-    switch(action.type){
-        case Actions.ADD: state = { ...state, skillId: action.payload}; break;
-        case Actions.REMOVE: state = { ...state, skillId: ""}; break;
-    }
+export interface ChatState {
+  messages: ChatMessage[];
+  loading: boolean;
+  error: any;
+}
 
-    return state;
+const initialChatState: ChatState = {
+  messages: [],
+  loading: false,
+  error: null
+};
+
+export function chatReducer(state = initialChatState, action: any): ChatState {
+  switch (action.type) {
+    case Actions.SEND_CHAT_MESSAGE:
+      return {
+        ...state,
+        loading: true,
+        messages: [...state.messages, {
+          text: action.payload,
+          sender: 'user',
+          timestamp: new Date()
+        }]
+      };
+    
+    case Actions.CHAT_MESSAGE_RECEIVED:
+      return {
+        ...state,
+        loading: false,
+        messages: [...state.messages, {
+          text: action.payload,
+          sender: 'agent',
+          timestamp: new Date()
+        }]
+      };
+    
+    case Actions.CHAT_MESSAGE_ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload
+      };
+    
+    default:
+      return state;
+  }
+}
+
+export interface AppState {
+  // ... existing state properties ...
+  chat: ChatState;
 }

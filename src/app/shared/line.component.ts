@@ -54,20 +54,6 @@ import { Component, OnInit } from '@angular/core';
         }
       }
 
-      @container (min-width: 576px) {
-        .separator {
-          display: flex;
-
-          .first {
-            flex: 1 1 25%;
-          }
-
-          .second {
-            flex: 1 1 75%;
-          }
-        }
-      }
-
       @container (min-width: 768px) {
         .separator {
           display: flex;

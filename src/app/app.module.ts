@@ -6,6 +6,8 @@ import { StateService } from './core/state.service';
 import { CoreModule } from './core/core.module';
 import { NavigationModule } from './navigation/navigation.module';
 import { ExperiencesModule } from './experiences/experiences.module';
+import { ChatStateService } from './chat/chat-state.service';
+import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -17,8 +19,9 @@ import { StoreModule } from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
 import * as moment from 'moment';
 import { RouterModule } from "@angular/router";
-import { mainReducer, authenticationReducer, navigationReducer, clippyReducer } from './reducers/reducers';
+import { mainReducer, authenticationReducer, navigationReducer, chatReducer } from './reducers/reducers';
 import { LayoutModule } from './layout/layout.module';
+import { ChatModule } from './chat/chat.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { LayoutModule } from './layout/layout.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot([], {}),
     BrowserAnimationsModule,
     FormsModule,
@@ -33,10 +37,21 @@ import { LayoutModule } from './layout/layout.module';
     NavigationModule,
     CoreModule,
     SharedModule,
-    StoreModule.forRoot({ navigation: navigationReducer, main: mainReducer, authentication: authenticationReducer, clippy: clippyReducer }),
-    EffectsModule.forRoot([StateService, ExperienceService, QueryStringService]),     
+    StoreModule.forRoot({ 
+      navigation: navigationReducer, 
+      main: mainReducer, 
+      authentication: authenticationReducer,
+      chat: chatReducer 
+    }),
+    EffectsModule.forRoot([
+      StateService, 
+      ExperienceService, 
+      QueryStringService,
+      ChatStateService
+    ]),     
     LoadingModule,
-    LayoutModule
+    LayoutModule,
+    ChatModule
   ],
   providers: [{ provide: 'moment', useValue: moment }],
   bootstrap: [AppComponent]

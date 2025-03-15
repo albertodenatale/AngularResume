@@ -137,7 +137,6 @@ export class AppState {
     navigation: ISkillTree;
     main: Main;
     authentication: any;
-    clippy: ClippyState;
 }
 
 export interface ISkillTree {
@@ -157,10 +156,6 @@ export class SkillTree implements ISkillTree {
 export class Main {
     isLoaded?: boolean;
     experiences: Experience[];
-}
-
-export class ClippyState{
-    skillId:string;
 }
 
 export class Authentication {

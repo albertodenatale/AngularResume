@@ -29,21 +29,25 @@ declare var Skype : any;
           container-type: inline-size;
         }
 
+        .personal-details {
+          margin-bottom: 40px;
+        }
 
         .personal-info {
           display: none;
         }
           
-        .personal-title,
-        .darkmode-toggle,
-        .personal-details {
-          flex: 1 1 100%;
+        .personal-title {
+          flex: 1 1 83%;
+          order: 0;
+        }
+          
+        .darkmode-toggle {
+          flex: 1 1 17%;
           order: 0;
         }
 
         @container (min-width: 576px) {
-          .personal-title,
-          .darkmode-toggle,
           .personal-info,
           .personal-details {
             flex: 1 1 100%;
@@ -52,15 +56,13 @@ declare var Skype : any;
         }
 
         @container (min-width: 768px) {
-          .personal-title,
-          .darkmode-toggle,
           .personal-details {
             flex: 1 1 100%;
             order: 0;
           }
         }
 
-        @container (min-width: 992px) {
+        @container (min-width: 768px) {
           .personal-title {
             flex: 1 1 66.6667%;
             order: 3;

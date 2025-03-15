@@ -15,6 +15,7 @@ export class AppComponent {
   isNavShowed: boolean = true;
   loadingNavSubscription: Subscription;
   isDarkModeOn: Boolean;
+  asideWidth: number;
 
   constructor(private store: Store<AppState>,
     private loadingService: LoadingService
@@ -39,5 +40,9 @@ export class AppComponent {
     this.store.dispatch({
       type: NodesActions.FETCHINITIALSTATE
     });
+  }
+
+  onAsideWidthChange(width: number) {
+    this.asideWidth = width;
   }
 }

@@ -1,4 +1,4 @@
-<layout>
+<layout (asideWidthChange)="onAsideWidthChange($event)">
   <div main>
       <navigation></navigation>
       <subnavigation></subnavigation> 
@@ -8,6 +8,6 @@
       <education></education>
   </div>
   <div aside>
-    <h2>test</h2>
+    <app-chat [asideWidth]="asideWidth"></app-chat>
   </div>
 </layout>

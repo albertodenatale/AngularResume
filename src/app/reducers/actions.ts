@@ -10,6 +10,10 @@ export const FETCHMAINCONTENT = "FETCHMAINCONTENT";
 export const FETCHINITIALSTATE = "FETCHINITIALSTATE";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
+export const SEND_CHAT_MESSAGE = '[Chat] Send Message';
+export const CHAT_MESSAGE_SENT = '[Chat] Message Sent';
+export const CHAT_MESSAGE_RECEIVED = '[Chat] Message Received';
+export const CHAT_MESSAGE_ERROR = '[Chat] Message Error';
 
 export class Add implements Action {
     readonly type = ADD;
@@ -61,5 +65,29 @@ export class Logout implements Action {
     constructor(public payload: any) { }
 }
 
-export type All =  Add | Remove| InitialStateLoaded | FetchInitialState | MainContentLoaded | FetchMainContent | QueryStringLoaded;
-export type Auth =  Login | Logout;
+export class SendChatMessage implements Action {
+    readonly type = SEND_CHAT_MESSAGE;
+
+    constructor(public payload: string) { }
+}
+
+export class ChatMessageSent implements Action {
+    readonly type = CHAT_MESSAGE_SENT;
+
+    constructor(public payload: string) { }
+}
+
+export class ChatMessageReceived implements Action {
+    readonly type = CHAT_MESSAGE_RECEIVED;
+
+    constructor(public payload: string) { }
+}
+
+export class ChatMessageError implements Action {
+    readonly type = CHAT_MESSAGE_ERROR;
+
+    constructor(public payload: any) { }
+}
+
+export type All = Add | Remove | InitialStateLoaded | FetchInitialState | MainContentLoaded | FetchMainContent | QueryStringLoaded | SendChatMessage | ChatMessageSent | ChatMessageReceived | ChatMessageError;
+export type Auth = Login | Logout;

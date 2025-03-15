@@ -163,7 +163,7 @@ navigation, subnavigation {
     }
 }
 
-@container (min-width: 576px) {
+@container (min-width: 768px) {
     navigation, subnavigation {
         display: block;
     }
@@ -192,13 +192,6 @@ toggable {
     }
 }
 
-.signin {
-    position: absolute;
-    right: 0;
-    top: 5px;
-    display: none;
-}
-
 experience {
     margin:0px 0 30px 0;
     toggable {
@@ -211,19 +204,6 @@ experience {
     transition: transform 1s;
 }
 
-@include media-breakpoint-up(sm) { 
-    experience {
-        margin-bottom: 10px;
-    }
-}
-
-@include media-breakpoint-down(md) { 
-    personal-details {
-        display: block;
-        margin-bottom: 40px;
-        min-height: 230px;
-    }
-}
 
 subnavigation {
     width: 100%;
@@ -234,29 +214,6 @@ subnavigation {
     overflow-y:hidden;
     overflow-x:hidden;
     min-height: 50px;
-}
-
-
-@include media-breakpoint-up(xl) { 
-    app-clippy{
-        top:30%;
-        right:20%;
-        left:auto;
-    }
-}
-
-@include media-breakpoint-up(md) { 
-    app-clippy{
-        top:25%;
-        right:30%;
-        left:auto;
-    }
-}
-
-@include media-breakpoint-down(sm) { 
-    app-clippy{
-        display: none;
-    }
 }
 
 
