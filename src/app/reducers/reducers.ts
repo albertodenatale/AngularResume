@@ -114,7 +114,11 @@ export interface ChatState {
 }
 
 const initialChatState: ChatState = {
-  messages: [],
+  messages: [{
+    text: "Welcome, I am Alberto's AI assistant and I am here to answer any question you may have on his professional experience!\n\nHow can I help you?",
+    sender: 'agent',
+    timestamp: new Date()
+  }],
   loading: false,
   error: null
 };

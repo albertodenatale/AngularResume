@@ -178,7 +178,7 @@ export class EducationComponent implements OnInit {
       duration: "March 2009 - February 2012",
       title: "Master's Degree in Computer Science (2012)",
       place: "Politecnico di Milano, Milan (Italy)",
-      path: ["artificial", "machinel", "vision", "naturall", "videogame"],
+      path: ["AI", "machinel", "vision", "naturall", "videogame"],
       navs: []
     },
     {

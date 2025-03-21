@@ -120,9 +120,14 @@
                          "parentId":"backend"
                       },
                       {
+                         "id":"net8",
+                         "label":".NET 8",
+                         "navigationBarId":"SUBNAV",
+                         "parentId":"backend"
+                      },
+                      {
                          "id":"net6",
                          "label":".NET 6",
-                         "navigationBarId":"SUBNAV",
                          "parentId":"backend"
                       },
                       {
@@ -137,8 +142,8 @@
                          "parentId":"backend"
                       },
                       {
-                         "id":"onion",
-                         "label":"Onion Architecture",
+                         "id":"layered",
+                         "label":"Layered Architecture",
                          "navigationBarId":"SUBNAV",
                          "parentId":"backend"
                       },
@@ -253,30 +258,6 @@
                 },
                 {
                    "children":[
-                      {
-                         "id":"artificial",
-                         "label":"AI",
-                         "navigationBarId":"SUBNAV",
-                         "parentId":"education"
-                      },
-                      {
-                         "id":"machinel",
-                         "label":"Machine Learning",
-                         "navigationBarId":"SUBNAV",
-                         "parentId":"education"
-                      },
-                      {
-                         "id":"vision",
-                         "label":"Artificial Vision",
-                         "navigationBarId":"SUBNAV",
-                         "parentId":"education"
-                      },
-                      {
-                         "id":"naturall",
-                         "label":"Natural Language Parsing",
-                         "navigationBarId":"SUBNAV",
-                         "parentId":"education"
-                      },
                       {
                          "id":"videogame",
                          "label":"Videogame Development",
@@ -452,6 +433,30 @@
                          "label":"Azure Service Bus",
                          "navigationBarId":"SUBNAV",
                          "parentId":"cloud"
+                      },
+                      {
+                         "id":"archgovernance",
+                         "label":"Design identity, governance, and monitoring solutions",
+                         "navigationBarId":"SUBNAV",
+                         "parentId":"cloud"
+                      },
+                      {
+                         "id":"archdata",
+                         "label":"Design data storage solutions",
+                         "navigationBarId":"SUBNAV",
+                         "parentId":"cloud"
+                      },
+                      {
+                         "id":"archbusinesscontinuity",
+                         "label":"Design business continuity solutions",
+                         "navigationBarId":"SUBNAV",
+                         "parentId":"cloud"
+                      },
+                      {
+                         "id":"archinfrastructure",
+                         "label":"Design infrastructure solutions",
+                         "navigationBarId":"SUBNAV",
+                         "parentId":"cloud"
                       }
                    ],
                    "id":"cloud",
@@ -509,6 +514,141 @@
                   ],
                    "id": "devops",
                    "label": "DevOps",
+                   "navigationBarId": "MAINNAV",
+                   "weight": 0.5
+                },
+                {
+                  "children":[
+                     {
+                        "id":"zero"
+                     },
+                     {
+                        "id":"azureai",
+                        "label":"Plan and manage an Azure AI solution",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"AI"
+                     },
+                     {
+                        "id":"contentmoderation",
+                        "label":"Implement content moderation solutions",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"AI"
+                     },
+                     {
+                        "id":"computervision",
+                        "label":"Implement computer vision solutions",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"AI"
+                     },
+                     {
+                        "id":"naturallanguage",
+                        "label":"Implement natural language processing solutions",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"AI"
+                     },
+                     {
+                        "id":"knowledgemining",
+                        "label":"Implement knowledge mining and document intelligence solutions",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"AI"
+                     },
+                     {
+                        "id":"generativeai",
+                        "label":"Implement generative AI solutions",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"AI"
+                     },
+                     {
+                        "id":"machinel",
+                        "label":"Machine Learning",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"AI"
+                     },
+                     {
+                        "id":"vision",
+                        "label":"Artificial Vision",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"AI"
+                     },
+                     {
+                        "id":"naturall",
+                        "label":"Natural Language Parsing",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"AI"
+                     }
+                  ],
+                   "id": "AI",
+                   "label": "AI",
+                   "navigationBarId": "MAINNAV",
+                   "weight": 0.5
+                },
+                {
+                  "children":[
+                     {
+                        "id":"zero"
+                     },
+                     {
+                        "id":"datastorage",
+                        "label":"Design and implement data storage",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"dataeng"
+                     },
+                     {
+                        "id":"dataprocessing",
+                        "label":"Develop data processing",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"dataeng"
+                     },
+                     {
+                        "id":"monitordata",
+                        "label":"Secure, monitor, and optimize data storage and data processing",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"dataeng"
+                     },
+                     {
+                        "id":"describedata",
+                        "label":"Describe core data concepts",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"dataeng"
+                     },
+                     {
+                        "id":"relationaldata",
+                        "label":"Identify considerations for relational data on Azure",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"dataeng"
+                     },
+                     {
+                        "id":"nonrelationaldata",
+                        "label":"Describe considerations for working with non-relational data on Azure",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"dataeng"
+                     },
+                     {
+                        "id":"analyticsworkloads",
+                        "label":"Describe an analytics workload on Azure",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"dataeng"
+                     }
+                  ],
+                   "id": "dataeng",
+                   "label": "Data",
+                   "navigationBarId": "MAINNAV",
+                   "weight": 0.5
+                },
+                {
+                  "children":[
+                     {
+                        "id":"zero"
+                     },
+                     {
+                        "id":"dsdm",
+                        "label":"DSDM",
+                        "navigationBarId":"SUBNAV",
+                        "parentId":"projectmanagement"
+                     }
+                  ],
+                   "id": "projectmanagement",
+                   "label": "Project Management",
                    "navigationBarId": "MAINNAV",
                    "weight": 0.5
                 }

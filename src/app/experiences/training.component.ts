@@ -168,6 +168,41 @@ export class TrainingComponent {
 
   trainings = [
     {
+      duration: "10th November 2024",
+      title: "Exam DP-203: Data Engineering on Microsoft Azure",
+      place: "Microsoft",
+      path: ["datastorage", "dataprocessing", "monitordata"],
+      navs: []
+    },
+    {
+      duration: "26th March 2024",
+      title: "AgilePM Foundation",
+      place: "APMG International",
+      path: ["dsdm"],
+      navs: []
+    },
+    {
+      duration: "1st January 2024",
+      title: "Exam DP-900: Microsoft Azure Data Fundamentals",
+      place: "Microsoft",
+      path: ["describedata","relationaldata","nonrelationaldata","analyticsworkloads"],
+      navs: []
+    },
+    {
+      duration: "16th September 2023",
+      title: "Exam AZ-102: Designing and Implementing a Microsoft Azure AI Solution",
+      place: "Microsoft",
+      path: ["azureai","contentmoderation","computervision","naturallanguage","knowledgemining","generativeai"],
+      navs: []
+    },
+    {
+      duration: "30th December 2022",
+      title: "Exam AZ-305: Designing Microsoft Azure Infrastructure Solutions",
+      place: "Microsoft",
+      path: ["archgovernance","archdata","archbusinesscontinuity","archinfrastructure"],
+      navs: []
+    },
+    {
       duration: "October 2021",
       title: "Problem solving intermediate",
       place: "HackerRank",
