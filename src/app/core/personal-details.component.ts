@@ -15,10 +15,9 @@ declare var Skype : any;
           <h5>Personal Information</h5>
         </div>
         <div class="personal-details jupiter">
-          <span class="trait"><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:alberto.denatale@outlook.com">alberto.denatale&#64;outlook.com</a></span>
           <span class="trait"><i class="fa fa-linkedin" aria-hidden="true"></i><a target="_blank" href="https://www.linkedin.com/in/alberto-de-natale/">LinkedIn</a></span>
           <span class="trait"><i class="fa fa-github" aria-hidden="true"></i><a target="_blank" href="https://github.com/albertodenatale/my-angular-website">GitHub</a></span>
-          <span class="trait"><i class="fa fa-stack-overflow" aria-hidden="true"></i><a target="_blank" href="https://stackexchange.com/users/3578609/alberto">Stack Overflow</a></span>
+          <span class="trait"><i class="fa fa-stack-overflow" aria-hidden="true"></i><a target="_blank" href="https://stackoverflow.com/users/2987314/alberto">Stack Overflow</a></span>
           <span class="trait"><i class="fa fa-windows" aria-hidden="true"></i><a target="_blank" href="https://docs.microsoft.com/en-us/users/albertodenatale/">Microsoft Learn</a></span>
         </div>
       </div>`,
@@ -30,7 +29,7 @@ declare var Skype : any;
         }
 
         .personal-details {
-          margin-bottom: 40px;
+          margin-bottom: 30px;
         }
 
         .personal-info {
