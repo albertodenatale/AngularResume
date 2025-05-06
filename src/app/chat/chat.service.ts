@@ -41,4 +41,17 @@ export class ChatService {
         })
       );
   }
-} 
+
+  sendContactDetails(contactDetails: string): Observable<string> {
+    return this.http.post<ChatResponse>(`${this.apiUrl}/contact`, { contactDetails }, { headers: this.headers })
+      .pipe(
+        map(response => response.message),
+        catchError((error: HttpErrorResponse) => {
+          return throwError({
+            statusCode: error.status,
+            message: error.error?.message || 'An unexpected error occurred'
+          } as ChatError);
+        })
+      );
+  }
+}

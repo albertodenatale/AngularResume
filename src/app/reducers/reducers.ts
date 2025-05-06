@@ -111,6 +111,8 @@ export interface ChatState {
   messages: ChatMessage[];
   loading: boolean;
   error: any;
+  isContactPromptShown: boolean;
+  isCompleted: boolean;
 }
 
 const initialChatState: ChatState = {
@@ -120,7 +122,9 @@ const initialChatState: ChatState = {
     timestamp: new Date()
   }],
   loading: false,
-  error: null
+  error: null,
+  isContactPromptShown: false,
+  isCompleted: false
 };
 
 export function chatReducer(state = initialChatState, action: any): ChatState {
@@ -137,21 +141,72 @@ export function chatReducer(state = initialChatState, action: any): ChatState {
       };
     
     case Actions.CHAT_MESSAGE_RECEIVED:
+      const userMessages = state.messages.filter(msg => msg.sender === 'user').length;
+      const shouldPromptContact = userMessages >= 3 && !state.isContactPromptShown;
+      
+      const newMessages = [
+        ...state.messages, 
+        {
+          text: action.payload,
+          sender: 'agent' as 'agent', // explicitly type as 'agent'
+          timestamp: new Date()
+        }
+      ];
+
+      if (shouldPromptContact) {
+        newMessages.push({
+          text: "Would you like to leave your contact details for Alberto to get in touch with you?",
+          sender: 'agent' as 'agent', // explicitly type as 'agent'
+          timestamp: new Date()
+        });
+      }
+
       return {
         ...state,
         loading: false,
-        messages: [...state.messages, {
-          text: action.payload,
-          sender: 'agent',
-          timestamp: new Date()
-        }]
+        messages: newMessages,
+        isContactPromptShown: shouldPromptContact ? true : state.isContactPromptShown
       };
     
     case Actions.CHAT_MESSAGE_ERROR:
+      const isThrottled = action.payload?.statusCode === 429;
+      const messages = isThrottled ? 
+        [...state.messages, {
+          text: "Would you like to leave your contact details for Alberto to get in touch with you?",
+          sender: 'agent' as 'agent',
+          timestamp: new Date()
+        }] : 
+        state.messages;
+
       return {
         ...state,
         loading: false,
-        error: action.payload
+        error: action.payload,
+        messages,
+        isContactPromptShown: isThrottled ? true : state.isContactPromptShown
+      };
+
+    case Actions.SEND_CONTACT_DETAILS:
+      return {
+        ...state,
+        loading: true,
+        messages: [...state.messages, {
+          text: action.payload,
+          sender: 'user',
+          timestamp: new Date()
+        }]
+      };
+
+    case Actions.CONTACT_DETAILS_RECEIVED:
+      return {
+        ...state,
+        loading: false,
+        isCompleted: true,
+        messages: [...state.messages, {
+          text: action.payload,
+          sender: 'agent' as 'agent',
+          timestamp: new Date()
+        }]
       };
     
     default:

@@ -14,6 +14,8 @@ export const SEND_CHAT_MESSAGE = '[Chat] Send Message';
 export const CHAT_MESSAGE_SENT = '[Chat] Message Sent';
 export const CHAT_MESSAGE_RECEIVED = '[Chat] Message Received';
 export const CHAT_MESSAGE_ERROR = '[Chat] Message Error';
+export const SEND_CONTACT_DETAILS = '[Chat] Send Contact Details';
+export const CONTACT_DETAILS_RECEIVED = '[Chat] Contact Details Received';
 
 export class Add implements Action {
     readonly type = ADD;
@@ -89,5 +91,19 @@ export class ChatMessageError implements Action {
     constructor(public payload: any) { }
 }
 
-export type All = Add | Remove | InitialStateLoaded | FetchInitialState | MainContentLoaded | FetchMainContent | QueryStringLoaded | SendChatMessage | ChatMessageSent | ChatMessageReceived | ChatMessageError;
+export class SendContactDetails implements Action {
+    readonly type = SEND_CONTACT_DETAILS;
+
+    constructor(public payload: string) { }
+}
+
+export class ContactDetailsReceived implements Action {
+    readonly type = CONTACT_DETAILS_RECEIVED;
+
+    constructor(public payload: string) { }
+}
+
+export type All = Add | Remove | InitialStateLoaded | FetchInitialState | MainContentLoaded | 
+    FetchMainContent | QueryStringLoaded | SendChatMessage | ChatMessageSent | 
+    ChatMessageReceived | ChatMessageError | SendContactDetails | ContactDetailsReceived;
 export type Auth = Login | Logout;

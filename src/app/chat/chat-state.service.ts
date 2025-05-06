@@ -27,9 +27,23 @@ export class ChatStateService {
     )
   );
 
+  sendContactDetails$ = createEffect(() => 
+    this.actions$.pipe(
+      ofType<MainActions.SendContactDetails>(MainActions.SEND_CONTACT_DETAILS),
+      mergeMap(action => 
+        this.chatService.sendContactDetails(action.payload).pipe(
+          map(response => new MainActions.ContactDetailsReceived(response)),
+          catchError(error => {
+            return of(new MainActions.ChatMessageError(error || {}));
+          })
+        )
+      )
+    )
+  );
+
   constructor(
     private actions$: Actions,
     private store: Store<AppState>,
     private chatService: ChatService
   ) { }
-} 
+}

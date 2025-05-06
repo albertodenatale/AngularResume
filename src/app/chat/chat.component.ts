@@ -2,6 +2,7 @@ import { Component, Input, ViewChild, ElementRef, AfterViewInit } from '@angular
 import { Store } from '@ngrx/store';
 import { AppState } from '../reducers/reducers';
 import * as Actions from '../reducers/actions';
+import { first } from 'rxjs/operators';
 
 interface ChatMessage {
   text: string;
@@ -22,14 +23,6 @@ interface ChatMessage {
           <div class="message-content">
             <pre>{{ message.text }}</pre>
             <small class="timestamp">{{ message.timestamp | date:'shortTime' }}</small>
-          </div>
-        </div>
-
-        <div *ngIf="error$ | async as error" 
-             class="message agent-message">
-          <div class="message-content">
-            <pre>{{ error.statusCode === 429 ? 'You have reached the daily limit of requests. Please try again tomorrow.' : error.message }}</pre>
-            <small class="timestamp">{{ getCurrentTime() | date:'shortTime' }}</small>
           </div>
         </div>
         
@@ -53,12 +46,12 @@ interface ChatMessage {
             placeholder="Type your message..."
             class="message-input"
             [class.exceeded]="isLengthExceeded"
-            [disabled]="(loading$ | async) || (error$ | async)?.statusCode === 429 || ((messagesUsed$ | async) >= maxMessagesPerDay)"
+            [disabled]="(loading$ | async) || (isCompleted$ | async)"
             rows="3"></textarea>
           <button (click)="sendMessage()" 
                   class="send-button"
-                  [disabled]="(loading$ | async) || (error$ | async)?.statusCode === 429 || ((messagesUsed$ | async) >= maxMessagesPerDay) || isLengthExceeded"
-                  [class.disabled]="(loading$ | async) || (error$ | async)?.statusCode === 429 || ((messagesUsed$ | async) >= maxMessagesPerDay) || isLengthExceeded">
+                  [disabled]="(loading$ | async) || isLengthExceeded || (isCompleted$ | async)"
+                  [class.disabled]="(loading$ | async) || isLengthExceeded || (isCompleted$ | async)">
             <i class="fas fa-arrow-up"></i>
           </button>
         </div>
@@ -386,7 +379,7 @@ export class ChatComponent implements AfterViewInit {
   loading$ = this.store.select(state => state.chat.loading);
   error$ = this.store.select(state => state.chat.error);
   messagesUsed$ = this.store.select(state => 
-    state.chat.messages.filter(msg => msg.sender === 'user').length
+    Math.min(3, state.chat.messages.filter(msg => msg.sender === 'user').length)
   );
   maxMessagesPerDay: number = 3;
   maxQuestionLength: number = 1000; // This should match the backend configuration
@@ -396,6 +389,7 @@ export class ChatComponent implements AfterViewInit {
   private startY: number;
   private startHeight: number;
   isLengthExceeded: boolean = false;
+  isCompleted$ = this.store.select(state => state.chat.isCompleted);
 
   constructor(private store: Store<AppState>) {}
 
@@ -437,13 +431,22 @@ export class ChatComponent implements AfterViewInit {
 
   sendMessage() {
     if (!this.newMessage.trim() || this.isLengthExceeded) return;
-    
-    this.store.dispatch(new Actions.SendChatMessage(this.newMessage.trim()));
-    this.newMessage = '';
-    this.isLengthExceeded = false;
+
+    this.store.select(state => state.chat.isContactPromptShown)
+      .pipe(first())
+      .subscribe(isContactPromptShown => {
+        if (isContactPromptShown) {
+          this.store.dispatch(new Actions.SendContactDetails(this.newMessage.trim()));
+        } else {
+          this.store.dispatch(new Actions.SendChatMessage(this.newMessage.trim()));
+        }
+
+        this.newMessage = '';
+        this.isLengthExceeded = false;
+      });
   }
 
   getCurrentTime(): Date {
     return new Date();
   }
-} 
+}
